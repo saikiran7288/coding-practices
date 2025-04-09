@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class ATMSimulator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int amount = scanner.nextInt();
+        scanner.close();
+        
+        if (amount % 100 != 0) {
+            System.out.println("Please enter the amount in multiples of 100");
+        } else if (amount > 20000) {
+            System.out.println("Please enter a lesser denomination");
+        } else if (amount <= 500) {
+            System.out.println((amount / 100) + " hundreds");
+        } else {
+            int notes500 = amount / 500;
+            int remaining = amount % 500;
+            int notes100 = remaining / 100;
+            System.out.println(notes500 + ":500s " + notes100 + ":100s");
+        }
+    }
+}

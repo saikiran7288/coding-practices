@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class CharacterCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
+        scanner.close();
+        
+        int lowercaseVowels = 0, uppercaseVowels = 0;
+        int lowercaseConsonants = 0, uppercaseConsonants = 0;
+        int digits = 0, specialCharacters = 0, spaces = 0;
+        
+        for (char ch : s.toCharArray()) {
+            if ("aeiou".indexOf(ch) != -1) {
+                lowercaseVowels++;
+            } else if ("AEIOU".indexOf(ch) != -1) {
+                uppercaseVowels++;
+            } else if (ch >= 'a' && ch <= 'z') {
+                lowercaseConsonants++;
+            } else if (ch >= 'A' && ch <= 'Z') {
+                uppercaseConsonants++;
+            } else if (ch >= '0' && ch <= '9') {
+                digits++;
+            } else if (ch == ' ') {
+                spaces++;
+            } else {
+                specialCharacters++;
+            }
+        }
+        
+        System.out.println(lowercaseVowels);
+        System.out.println(uppercaseVowels);
+        System.out.println(lowercaseConsonants);
+        System.out.println(uppercaseConsonants);
+        System.out.println(digits);
+        System.out.println(specialCharacters);
+        System.out.println(spaces);
+    }
+}

@@ -1,0 +1,17 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+     Scanner ob=new Scanner(System.in);//Scanner initialization
+        int a=ob.nextInt();//taking inputs
+        int b=ob.nextInt();
+        int c=ob.nextInt();
+        int lar2=(a>b)?a:(b>c)?b:c;//condition check using ternary operator
+        
+        System.out.print(lar2);
+    
+    
+    }
+}
